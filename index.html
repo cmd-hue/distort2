@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Fishstick Softbody</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://esm.sh/three@0.157.0",
+                "three/addons/": "https://esm.sh/three@0.157.0/examples/jsm/",
+                "nipplejs": "https://esm.sh/nipplejs"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="joystick-zone"></div>
+    <div id="warning-overlay">
+        <div id="warning-content">
+            <h2 style="margin-top: 0; color: #f1c40f;">Device Recommendation</h2>
+            <p>This game is recommended for tablets and computers (Laptops, PCs, VMs) for the best performance and controls.</p>
+            <button id="warning-close">I UNDERSTAND</button>
+        </div>
+    </div>
+    <div id="loading">Loading Tom...</div>
+    <div id="instructions">Drag to Squish • Toggle Modes Below • Extreme Wackiness Enabled</div>
+    <div id="model-selector">
+        <button class="selector-btn" data-model="/tom.glb">Tom</button>
+        <button class="selector-btn" data-model="/fishstick_vr_skin_fortnite.glb">Fishstick</button>
+        <button class="selector-btn" data-model="/roblox-bacon-hair.glb">Bacon Hair</button>
+        <button class="selector-btn" data-model="/roblox_noob.glb">Noob</button>
+        <button class="selector-btn" data-model="/mario64.glb">Mario</button>
+        <button class="selector-btn" data-model="/talking_tom_young.glb">Baby Tom</button>
+        <button class="selector-btn" data-model="/xbox_one.glb" style="background: #107c10;">Xbox One</button>
+        <button id="import-btn" class="selector-btn" style="background: #27ae60;">Import 3D</button>
+        <button id="texture-btn" class="selector-btn" style="background: #d35400;">Import Texture</button>
+        <button id="texture-remove-btn" class="selector-btn" style="background: #7f8c8d;">Del Texture</button>
+        <button id="reflection-btn" class="selector-btn" style="background: #2980b9;">Import Sky/Ref</button>
+        <input type="file" id="file-input" accept=".glb,.gltf,.obj" style="display: none;">
+        <input type="file" id="texture-input" accept=".jpg,.jpeg,.png,.svg" style="display: none;">
+        <input type="file" id="reflection-input" accept=".jpg,.jpeg,.png,.svg" style="display: none;">
+    </div>
+    <div id="controls-container">
+        <button id="clone-btn">Clone Model</button>
+        <button id="rain-btn">Rain: OFF</button>
+        <button id="explode-btn">Explode!</button>
+        <button id="ragdoll-btn">Ragdoll: OFF</button>
+        <button id="faint-btn">Faint: OFF</button>
+        <button id="push-btn">Yeet!</button>
+        <button id="jump-freeze-btn">Jump & Freeze</button>
+        <button id="inflate-btn">Inflate: OFF</button>
+        <button id="deflate-btn">Deflate: OFF</button>
+        <button id="remove-root-btn">Remove Root</button>
+        <button id="rip-btn">Rip Apart!</button>
+        <button id="crush-y-btn">Crush Y: OFF</button>
+        <button id="crush-x-btn">Crush X: OFF</button>
+        <button id="crush-z-btn">Crush Z: OFF</button>
+        <button id="two-d-btn">Atomic 2D: OFF</button>
+        <button id="post-btn">Post Snapshot</button>
+        <button id="delete-btn">Delete: OFF</button>
+        <button id="freeze-btn">Freeze: OFF</button>
+        <button id="render-btn">Render: OFF</button>
+        <button id="braille-btn">Braille: OFF</button>
+        <button id="webview-btn">Webview: OFF</button>
+        <button id="reset-btn">Reset Model</button>
+    </div>
+
+    <div id="css-container"></div>
+    <div id="crash-overlay">i know you are trying to crash this game</div>
+    <div id="creepy-message"></div>
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
+
