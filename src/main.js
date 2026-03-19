@@ -44,7 +44,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x222222);
 
 // Load default skybox
-new THREE.TextureLoader().load('/skyob.png', (texture) => {
+new THREE.TextureLoader().load('./skyob.png', (texture) => {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     texture.colorSpace = THREE.SRGBColorSpace;
     scene.background = texture;
@@ -185,7 +185,7 @@ const playSquish = () => {
 let softBodies = []; // Now managing multiple bodies
 let webviewSoftBody = null;
 let currentMesh = null; // Reference to the "primary" or latest mesh
-let currentModelUrl = '/tom.glb';
+let currentModelUrl = './tom.glb';
 let currentModelFormat = 'gltf'; // Track for texture flipY logic
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
